@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pwo.seq;
 
 import java.math.BigDecimal;
 
-/**
- *
- * @author nadyasimakovich
- */
 public class LucasGenerator extends FibonacciGenerator {
 
     public LucasGenerator() {
@@ -31,5 +23,18 @@ public class LucasGenerator extends FibonacciGenerator {
             return new BigDecimal(2);
         }
         return super.nextTerm();
+    }
+
+
+    @Override
+    public BigDecimal previousTerm() {
+        if (lastIndex <= 1) {
+            return null;
+        }
+        BigDecimal temp = f_2.subtract(current);
+        f_2 = current;
+        current = temp;
+        lastIndex--;
+        return current;
     }
 }
