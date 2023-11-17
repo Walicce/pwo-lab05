@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pwo.seq;
 
 import java.math.BigDecimal;
@@ -12,11 +8,19 @@ import java.math.BigDecimal;
  */
 public class LucasGenerator extends FibonacciGenerator {
 
+    /**
+     * Konstruktor klasy LucasGenerator. Inicjalizuje current i f_2 wartościami
+     * 2.
+     */
     public LucasGenerator() {
         current = new BigDecimal(2);
         f_2 = new BigDecimal(2);
     }
 
+    /**
+     * Przeładowana metoda resetująca generator, wywołująca także reset klasy
+     * nadrzędnej.
+     */
     @Override
     public void reset() {
         super.reset();
@@ -24,6 +28,11 @@ public class LucasGenerator extends FibonacciGenerator {
         f_2 = new BigDecimal(2);
     }
 
+    /**
+     * Przeładowana metoda generująca kolejny term w ciągu Lucasa.
+     *
+     * @return Następny term w ciągu.
+     */
     @Override
     public BigDecimal nextTerm() {
         if (lastIndex == 0) {
